@@ -65,6 +65,23 @@ public class GestorLibros {
         else {
             System.out.println("Libro no encontrado");
         }
-
     }
+
+    public void sumarPrecio() {
+       boolean hayLIbros = false;
+        double precioTotal = 0;
+        for (Libros libro : libroslist) {
+            precioTotal += libro.getPrecio();
+            hayLIbros = true;
+        }
+        if(hayLIbros) {
+            System.out.println("Precio total: " + precioTotal);
+        }
+        else {
+            System.out.println("Sin Libros para sumar");
+        }
+    }
+
 }
+
+

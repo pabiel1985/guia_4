@@ -41,11 +41,15 @@ public class MenuLibros {
                     gestor.buscarLibro(titulo3);
                     break;
                 case 5:
-                    System.out.println("Introduce el titulo del libro a buscar");
+                    System.out.println("Introduce el titulo del libro a cambiar precio");
                     String titulo4 = teclado.nextLine();
-                    System.out.println("Introfuce nuevo precio del libro");
+                    System.out.println("Introduce nuevo precio del libro");
                     double precio4 = teclado.nextDouble();
                     gestor.cambiarPrecio(titulo4, precio4);
+                    break;
+                case 6:
+                    System.out.println("Se suman todos los libros");
+                    gestor.sumarPrecio();
                     break;
             }
         } while (opcion != 0);
