@@ -82,6 +82,9 @@ public class GestorLibros {
         }
     }
 
+    public void librosTotales() {
+        System.out.println("Cantidad de libros: " + libroslist.size());
+    }
 }
 
 

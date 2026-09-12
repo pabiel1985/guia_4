@@ -51,6 +51,9 @@ public class MenuLibros {
                     System.out.println("Se suman todos los libros");
                     gestor.sumarPrecio();
                     break;
+                case 7:
+                    gestor.librosTotales();
+                    break;
             }
         } while (opcion != 0);
 
