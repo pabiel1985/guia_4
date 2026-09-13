@@ -122,7 +122,7 @@ public class MenuLibros {
                     gestor.librosTotales();
                     break;
                 case 8:
-                    gestor.mostrarLibroMasCaroyBarato();
+                    gestor.mostrarLibroMasCaroBarato();
                     break;
                 case 0:
                     System.out.println("Gracias por utilizar la Biblioteca");

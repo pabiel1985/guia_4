@@ -3,7 +3,7 @@ import java.util.List;
 
 
 public class GestorLibros {
-    private List<Libros> libroslist;
+    private final List<Libros> libroslist;
 
     public GestorLibros() {
         libroslist = new ArrayList<>();
@@ -83,7 +83,7 @@ public class GestorLibros {
         System.out.println("Cantidad de libros: " + libroslist.size());
     }
 
-    public void mostrarLibroMasCaroyBarato() {
+    public void mostrarLibroMasCaroBarato() {
         boolean hayLibros = false;
         double libroMasCaro = 0;
         double libroMasBarato = 999999;
@@ -103,6 +103,37 @@ public class GestorLibros {
             System.out.println("Sin Libros para mostrar");
         }
 
+    }
+
+    public void primeraLetraAutor(String tituloBuscado) {
+        boolean existe = false;
+        char primeraLetraAutor = 0;
+        for (Libros libro : libroslist) {
+            if (libro.getTitulo().equals(tituloBuscado)) {
+                existe = true;
+                primeraLetraAutor = libro.getAutor().charAt(0);
+            }
+        }
+        if (existe) {
+            System.out.println("La primera letra del Autor es: " + primeraLetraAutor);
+        } else {
+            System.out.println("Sin Libros para mostrar");
+        }
+    }
+
+    public void cambiarAutor(String tituloBuscado, String autorNuevo) {
+        boolean existe = false;
+        for (Libros libro : libroslist) {
+            if (libro.getTitulo().equals(tituloBuscado)) {
+                libro.setAutor(autorNuevo);
+                existe = true;
+            }
+        }
+        if (existe) {
+            System.out.println("Autor cambiado");
+        } else {
+            System.out.println("Sin Libros para mostrar");
+        }
     }
 }
 
