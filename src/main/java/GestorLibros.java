@@ -25,8 +25,7 @@ public class GestorLibros {
         if (existe) {
             libroslist.remove(encontrado);
             System.out.println("Libro eliminado");
-        }
-        else {
+        } else {
             System.out.println("Libro no encontrado");
         }
     }
@@ -46,7 +45,7 @@ public class GestorLibros {
                 System.out.println(libro);
             }
         }
-        if(!existe) {
+        if (!existe) {
             System.out.println("Libro no encontrado");
         }
     }
@@ -59,31 +58,51 @@ public class GestorLibros {
                 existe = true;
             }
         }
-        if(existe) {
+        if (existe) {
             System.out.println("Precio cambiado");
-        }
-        else {
+        } else {
             System.out.println("Libro no encontrado");
         }
     }
 
     public void sumarPrecio() {
-       boolean hayLIbros = false;
+        boolean hayLIbros = false;
         double precioTotal = 0;
         for (Libros libro : libroslist) {
             precioTotal += libro.getPrecio();
             hayLIbros = true;
         }
-        if(hayLIbros) {
+        if (hayLIbros) {
             System.out.println("Precio total: " + precioTotal);
-        }
-        else {
+        } else {
             System.out.println("Sin Libros para sumar");
         }
     }
 
     public void librosTotales() {
         System.out.println("Cantidad de libros: " + libroslist.size());
+    }
+
+    public void mostrarLibroMasCaroyBarato() {
+        boolean hayLibros = false;
+        double libroMasCaro = 0;
+        double libroMasBarato = 999999;
+        for (Libros libro : libroslist) {
+            hayLibros = true;
+            if (libro.getPrecio() > libroMasCaro) {
+                libroMasCaro = libro.getPrecio();
+            }
+            if (libro.getPrecio() < libroMasBarato) {
+                libroMasBarato = libro.getPrecio();
+            }
+        }
+        if (hayLibros) {
+            System.out.println("El libro mas caro vale: " + libroMasCaro);
+            System.out.println("El libro mas barato vale: " + libroMasBarato);
+        } else {
+            System.out.println("Sin Libros para mostrar");
+        }
+
     }
 }
 
